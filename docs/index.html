@@ -3,32 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revit Families Catalog - PORTA BASICA</title>
+    <title>Product Catalog</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Revit Families Catalog</h1>
-        <h2>PORTA BASICA</h2>
+        <h1>Beautiful Product Catalog</h1>
     </header>
     <main>
-        <section>
-            <h3>Available Sizes</h3>
-            <ul>
-                <li>210:80</li>
-                <li>210:90</li>
-                <li>210:100</li>
-            </ul>
-        </section>
-        <section>
-            <h3>Download Links</h3>
-            <button><a href="/downloads/porta_basica_210_80.rfa">Download 210:80</a></button>
-            <button><a href="/downloads/porta_basica_210_90.rfa">Download 210:90</a></button>
-            <button><a href="/downloads/porta_basica_210_100.rfa">Download 210:100</a></button>
-        </section>
+        <div class="product-grid">
+            <div class="product-card" onclick="openModal('product1')">
+                <img src="image1.jpg" alt="Product 1">
+                <h2>Product 1</h2>
+                <p>Short description of Product 1.</p>
+            </div>
+            <div class="product-card" onclick="openModal('product2')">
+                <img src="image2.jpg" alt="Product 2">
+                <h2>Product 2</h2>
+                <p>Short description of Product 2.</p>
+            </div>
+            <!-- More product cards can be added here -->
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2026 BIELMOREIRA382. All rights reserved.</p>
-    </footer>
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <img id="modal-image" src="" alt="">
+            <p id="modal-description"></p>
+        </div>
+    </div>
+    <script>
+        function openModal(productId) {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'block';
+            // Set product details based on the productId
+        }
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
